@@ -22,3 +22,13 @@ Here, I re-examine the analysis of Oeppen and Vaupel (2002).
 
 # Analysis
 
+```{r}
+data("gepminder_unfiltered")
+gapminder_unfiltered %>%
+  group_by(year) %>%
+  filter(lifeExp == max(lifeExp)) %>%
+  ungroup() %>%
+  select(year, country, lifeExp) %>%
+  arrange(year) ->
+  sumdat
+```
