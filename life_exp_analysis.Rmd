@@ -2,8 +2,10 @@
 title: "Examine Life Expectancy"
 author: "Richard Ressler"
 date: "`r Sys.Date()`"
-output: pdf_document
-urlcolor: "blue"
+output:
+  html_document:
+    df_print: paged
+urlcolor: blue
 ---
 
 ```{r setup, include=FALSE}
@@ -23,7 +25,7 @@ Here, I re-examine the analysis of Oeppen and Vaupel (2002).
 # Analysis
 
 ```{r}
-data("gepminder_unfiltered")
+data("gapminder_unfiltered")
 gapminder_unfiltered %>%
   group_by(year) %>%
   filter(lifeExp == max(lifeExp)) %>%
@@ -32,3 +34,5 @@ gapminder_unfiltered %>%
   arrange(year) ->
   sumdat
 ```
+
+New line test
